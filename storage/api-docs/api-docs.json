@@ -1,0 +1,425 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Your super  ApplicationAPI",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/v1/notebook/": {
+            "get": {
+                "tags": [
+                    "datebook"
+                ],
+                "summary": "Get",
+                "description": "name,company,email,number,data,foto",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "name",
+                                    "email",
+                                    "number"
+                                ],
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "format": "text",
+                                        "example": "Иванов Иван Иванович"
+                                    },
+                                    "company": {
+                                        "type": "string",
+                                        "format": "text",
+                                        "example": "Гейзер"
+                                    },
+                                    "email": {
+                                        "type": "string",
+                                        "format": "email",
+                                        "example": "user1@mail.com"
+                                    },
+                                    "number": {
+                                        "type": "string",
+                                        "format": "number",
+                                        "example": "+79503199999"
+                                    },
+                                    "data": {
+                                        "type": "string",
+                                        "format": "date",
+                                        "example": "01.01.2022"
+                                    },
+                                    "foto": {
+                                        "type": "string",
+                                        "format": "text",
+                                        "example": "https://obrazovan.online/blog/oformlenie-ssyilok-po-gostu.jpg"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "200: OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "OK"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "400:Not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Not found"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "datebook"
+                ],
+                "summary": "Post",
+                "description": "name,company,email,number,data,foto",
+                "operationId": "authLogin",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "name",
+                                    "email",
+                                    "number"
+                                ],
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "format": "text",
+                                        "example": "Иванов Иван Иванович"
+                                    },
+                                    "company": {
+                                        "type": "string",
+                                        "format": "text",
+                                        "example": "Гейзер"
+                                    },
+                                    "email": {
+                                        "type": "string",
+                                        "format": "email",
+                                        "example": "user1@mail.com"
+                                    },
+                                    "number": {
+                                        "type": "string",
+                                        "format": "number",
+                                        "example": "+79503199999"
+                                    },
+                                    "data": {
+                                        "type": "string",
+                                        "format": "date",
+                                        "example": "01.01.2022"
+                                    },
+                                    "foto": {
+                                        "type": "string",
+                                        "format": "text",
+                                        "example": "https://obrazovan.online/blog/oformlenie-ssyilok-po-gostu.jpg"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "201: Created",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "201: Created"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/notebook/id": {
+            "get": {
+                "tags": [
+                    "datebook"
+                ],
+                "summary": "GetId",
+                "description": "name,company,email,number,data,foto",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "name",
+                                    "company",
+                                    "email",
+                                    "number",
+                                    "data",
+                                    "foto"
+                                ],
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "format": "text",
+                                        "example": "Иванов Иван Иванович"
+                                    },
+                                    "company": {
+                                        "type": "string",
+                                        "format": "text",
+                                        "example": "Гейзер"
+                                    },
+                                    "email": {
+                                        "type": "string",
+                                        "format": "email",
+                                        "example": "user1@mail.com"
+                                    },
+                                    "number": {
+                                        "type": "string",
+                                        "format": "number",
+                                        "example": "+79503199999"
+                                    },
+                                    "data": {
+                                        "type": "string",
+                                        "format": "date",
+                                        "example": "01.01.2022"
+                                    },
+                                    "foto": {
+                                        "type": "string",
+                                        "format": "text",
+                                        "example": "https://obrazovan.online/blog/oformlenie-ssyilok-po-gostu.jpg"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "200: OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "OK"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "400:Not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Not found"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "datebook"
+                ],
+                "summary": "Put",
+                "description": "name,email,number",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "name",
+                                    "email",
+                                    "number"
+                                ],
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "format": "text",
+                                        "example": "Иванов Иван Иванович"
+                                    },
+                                    "company": {
+                                        "type": "string",
+                                        "format": "text",
+                                        "example": "Гейзер"
+                                    },
+                                    "email": {
+                                        "type": "string",
+                                        "format": "email",
+                                        "example": "user1@mail.com"
+                                    },
+                                    "number": {
+                                        "type": "string",
+                                        "format": "number",
+                                        "example": "+79503199999"
+                                    },
+                                    "data": {
+                                        "type": "string",
+                                        "format": "date",
+                                        "example": "01.01.2022"
+                                    },
+                                    "foto": {
+                                        "type": "string",
+                                        "format": "text",
+                                        "example": "https://obrazovan.online/blog/oformlenie-ssyilok-po-gostu.jpg"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "200: OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "OK"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "400:Not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Not found"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "datebook"
+                ],
+                "summary": "Delete",
+                "description": "name,company,email,number,data,foto",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "name",
+                                    "email",
+                                    "number"
+                                ],
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "format": "text",
+                                        "example": "Иванов Иван Иванович"
+                                    },
+                                    "company": {
+                                        "type": "string",
+                                        "format": "text",
+                                        "example": "Гейзер"
+                                    },
+                                    "email": {
+                                        "type": "string",
+                                        "format": "email",
+                                        "example": "user1@mail.com"
+                                    },
+                                    "number": {
+                                        "type": "string",
+                                        "format": "number",
+                                        "example": "+79503199999"
+                                    },
+                                    "data": {
+                                        "type": "string",
+                                        "format": "date",
+                                        "example": "01.01.2022"
+                                    },
+                                    "foto": {
+                                        "type": "string",
+                                        "format": "text",
+                                        "example": "https://obrazovan.online/blog/oformlenie-ssyilok-po-gostu.jpg"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "204": {
+                        "description": "204: No Content ",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "No Content "
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
